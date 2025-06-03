@@ -1,11 +1,11 @@
 <script setup>
-
+import FeaturedProducts from '../components/FeaturedProducts.vue'
 </script>
 
 <template>
   <main>
     <div class="px-48 mt-6">
-      Estoy en el home
+      <FeaturedProducts />
     </div>
   </main>
 </template>
