@@ -4,7 +4,7 @@ import FeaturedProducts from '../components/FeaturedProducts.vue'
 
 <template>
   <main>
-    <div class="px-48 mt-6">
+    <div class="px-48 my-8">
       <FeaturedProducts />
     </div>
   </main>
