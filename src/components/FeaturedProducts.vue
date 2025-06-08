@@ -38,7 +38,12 @@ const products = [
   <h5 class="text-lg font-semibold">PRODUCTOS DESTACADOS</h5>
   <p class="text-sm font-light text-gray-500">Productos mas vendidos durante el mes de Mayo.</p>
   <div class="grid grid-cols-5 mt-6">
-    <div class="p-4 border border-gray-200" v-for="(product, key) in products" :key="key">
+    <div
+        class="p-4 border-l border-t border-b border-gray-200"
+        :class="products.length - 1 === key ? 'border-r' : ''"
+        v-for="(product, key) in products"
+        :key="key"
+    >
         <img class="w-full px-2 py-4" :src="useAssets(`/src/assets/images/products/${product.image}`)" alt="">
         <span class="text-sm text-gray-500">{{ product.brand }}</span>
         <h6 class="text-base/5 font-medium mb-2 min-h-[2lh] line-clamp-2">{{ product.name }}</h6>

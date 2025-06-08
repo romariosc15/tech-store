@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from 'vue';
 import { RouterLink } from 'vue-router'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faUser, faShoppingCart, faBars, faChevronDown } from '@fortawesome/free-solid-svg-icons'
@@ -8,6 +9,10 @@ const navLinks = [
   {name: 'ABOUT', path: '/about'},
   {name: 'CONTACT', path: '/contact'},
 ]
+let isCategoriesDropdownVisible = ref(false);
+const onShowCategories = () => {
+  isCategoriesDropdownVisible.value = !isCategoriesDropdownVisible.value;
+};
 </script>
 
 <template>
@@ -35,11 +40,51 @@ const navLinks = [
       </div>
     </div>
     <div class="flex flex-row justify-between items-center mt-4">
-      <button class="bg-sky-400 text-white text-sm rounded-4xl py-3 px-6 cursor-pointer">
-        <FontAwesomeIcon size="1x" :icon="faBars" />
-        <span class="mx-4 font-semibold">CATEGORIES</span>
-        <FontAwesomeIcon size="1x" :icon="faChevronDown" />
-      </button>
+      <div class="relative">
+        <button class="bg-sky-400 text-white text-sm rounded-4xl py-3 px-6 cursor-pointer" @click="onShowCategories">
+          <FontAwesomeIcon size="1x" :icon="faBars" />
+          <span class="mx-4 font-semibold">CATEGORIES</span>
+          <FontAwesomeIcon size="1x" :icon="faChevronDown" />
+        </button>
+        <div 
+          class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-hidden"
+          :class="isCategoriesDropdownVisible ? 'block' : 'hidden'"
+          role="menu"
+          aria-orientation="vertical"
+          aria-labelledby="menu-button"
+          tabindex="-1"
+        >
+          <div class="py-1" role="none">
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+              role="menuitem"
+              tabindex="-1"
+              id="menu-item-0"
+            >
+              Category 1
+            </a>
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+              role="menuitem"
+              tabindex="-1"
+              id="menu-item-1"
+            >
+              Category 2
+            </a>
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+              role="menuitem"
+              tabindex="-1"
+              id="menu-item-2"
+            >
+              Category 3
+            </a>
+          </div>
+        </div>
+      </div>
       <div>
         <ul class="flex flex-row gap-1 text-gray-700 text-sm">
           <li v-for="(link, key) in navLinks" :key="key">
