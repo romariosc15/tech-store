@@ -32,6 +32,13 @@ const products = [
         price: 4999.99,
     },
 ]
+const getRoundedClasses = (currentIndex) => {
+    const lastIndex = products.length - 1;
+    let result = '';
+    currentIndex === 0 ? result += 'rounded-bl-lg rounded-tl-lg' : ''
+    lastIndex === currentIndex ? result += 'border-r rounded-br-lg rounded-tr-lg' : ''
+    return result;
+}
 </script>
 
 <template>
@@ -40,8 +47,8 @@ const products = [
   <div class="grid grid-cols-5 mt-6">
     <div
         class="p-4 border-l border-t border-b border-gray-200"
-        :class="products.length - 1 === key ? 'border-r' : ''"
         v-for="(product, key) in products"
+        :class="getRoundedClasses(key)"
         :key="key"
     >
         <img class="w-full h-[200px] object-cover px-2 py-4" :src="useAssets(`/src/assets/images/products/${product.image}`)" alt="">

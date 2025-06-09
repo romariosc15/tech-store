@@ -6,7 +6,7 @@ import FeaturedProducts from '../components/FeaturedProducts.vue'
   <main>
     <div class="px-48 mt-12 mb-16">
       <div class="grid grid-cols-2 gap-8 mb-8">
-        <div class="banner-1 w-full h-[275px] bg-center rounded-md flex justify-end items-center p-8">
+        <div class="banner-1 w-full h-[275px] bg-center rounded-lg flex justify-end items-center p-8">
           <div>
             <h4 class="text-2xl font-light text-blue-950">Descuento en</h4>
             <h2 class="text-4xl font-bold text-blue-950">Computadoras</h2>
@@ -18,7 +18,7 @@ import FeaturedProducts from '../components/FeaturedProducts.vue'
             </div>
           </div>
         </div>
-        <div class="banner-2 w-full h-[275px] bg-center rounded-md flex justify-end items-center p-8">
+        <div class="banner-2 w-full h-[275px] bg-center rounded-lg flex justify-end items-center p-8">
           <div>
             <h4 class="text-2xl font-light text-blue-950">Descuento en</h4>
             <h2 class="text-4xl font-bold text-blue-950">Playstation</h2>
