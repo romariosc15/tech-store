@@ -19,7 +19,7 @@ const onShowCategories = () => {
   <nav class="px-48 pt-6 pb-4 border-b border-b-gray-200">
     <div class="flex flex-row justify-between items-center">
       <h1 class="text-4xl text-blue-900 font-black">TECH STORE</h1>
-      <input class="bg-gray-100 w-[500px] h-10 px-6 rounded-md" type="text" placeholder="Search products ...">
+      <input class="bg-gray-100 text-sm w-[500px] h-12 px-6 rounded-md" type="text" placeholder="Search products ...">
       <div>
         <ul class="flex flex-row gap-4 text-gray-700">
           <li>
@@ -47,7 +47,7 @@ const onShowCategories = () => {
           <FontAwesomeIcon size="1x" :icon="faChevronDown" />
         </button>
         <div 
-          class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-hidden"
+          class="absolute left-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-hidden"
           :class="isCategoriesDropdownVisible ? 'block' : 'hidden'"
           role="menu"
           aria-orientation="vertical"
@@ -55,40 +55,42 @@ const onShowCategories = () => {
           tabindex="-1"
         >
           <div class="py-1" role="none">
-            <a
-              href="#"
+            <RouterLink
+              to="#"
               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
               role="menuitem"
               tabindex="-1"
               id="menu-item-0"
             >
               Category 1
-            </a>
-            <a
-              href="#"
+            </RouterLink>
+            <RouterLink
+              to="#"
               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
               role="menuitem"
               tabindex="-1"
               id="menu-item-1"
             >
               Category 2
-            </a>
-            <a
-              href="#"
+            </RouterLink>
+            <RouterLink
+              to="#"
               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
               role="menuitem"
               tabindex="-1"
               id="menu-item-2"
             >
               Category 3
-            </a>
+            </RouterLink>
           </div>
         </div>
       </div>
       <div>
-        <ul class="flex flex-row gap-1 text-gray-700 text-sm">
+        <ul class="flex flex-row gap-1 text-gray-700">
           <li v-for="(link, key) in navLinks" :key="key">
-            <RouterLink class="font-medium transition-colors hover:bg-sky-100 hover:text-sky-500 px-5 py-2.5 rounded-4xl" :to="link.path">{{link.name}}</RouterLink>
+            <RouterLink class="text-sm font-medium transition-colors hover:bg-sky-100 hover:text-sky-500 px-5 py-2.5 rounded-4xl" :to="link.path">
+              {{link.name}}
+            </RouterLink>
           </li>
         </ul>
       </div>
