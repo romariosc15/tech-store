@@ -1,14 +1,14 @@
 <script setup>
 import { ref } from 'vue';
-import { RouterLink } from 'vue-router'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faUser, faShoppingCart, faBars, faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { RouterLink } from 'vue-router';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { faUser, faShoppingCart, faBars, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 const navLinks = [
   {name: 'HOME', path: '/'},
-  {name: 'SHOP', path: '/shop'},
+  {name: 'SHOP', path: '/products'},
   {name: 'ABOUT', path: '/about'},
   {name: 'CONTACT', path: '/contact'},
-]
+];
 let isCategoriesDropdownVisible = ref(false);
 const onShowCategories = () => {
   isCategoriesDropdownVisible.value = !isCategoriesDropdownVisible.value;
