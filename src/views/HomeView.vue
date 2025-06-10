@@ -6,7 +6,7 @@ import FeaturedProducts from '../components/FeaturedProducts.vue';
   <main>
     <div class="px-48 mt-12 mb-16">
       <div class="grid grid-cols-2 gap-8 mb-8">
-        <div class="banner-1 w-full h-[275px] bg-center rounded-lg flex justify-end items-center p-8">
+        <div class="home-banner-1 w-full h-[275px] bg-center rounded-lg flex justify-end items-center p-8">
           <div>
             <h4 class="text-2xl font-light text-blue-950">Descuento en</h4>
             <h2 class="text-4xl font-bold text-blue-950">Computadoras</h2>
@@ -18,7 +18,7 @@ import FeaturedProducts from '../components/FeaturedProducts.vue';
             </div>
           </div>
         </div>
-        <div class="banner-2 w-full h-[275px] bg-center rounded-lg flex justify-end items-center p-8">
+        <div class="home-banner-2 w-full h-[275px] bg-center rounded-lg flex justify-end items-center p-8">
           <div>
             <h4 class="text-2xl font-light text-blue-950">Descuento en</h4>
             <h2 class="text-4xl font-bold text-blue-950">Playstation</h2>
@@ -37,10 +37,10 @@ import FeaturedProducts from '../components/FeaturedProducts.vue';
 </template>
 
 <style scoped>
-  .banner-1 {
+  .home-banner-1 {
     background-image: url('../assets/images/home/banner-1.png');
   }
-  .banner-2 {
+  .home-banner-2 {
     background-image: url('../assets/images/home/banner-2.png');
   }
 </style>
