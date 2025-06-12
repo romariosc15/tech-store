@@ -60,10 +60,10 @@ const getRoundedClasses = (currentIndex) => {
         <RouterLink :to="`/product/${product.id}`">
             <img class="w-full h-[200px] object-cover px-2 py-4" :src="useAssets(`/src/assets/images/products/${product.image}`)" alt="">
         </RouterLink>
-        <span class="text-sm font-light text-gray-500">{{ product.brand }}</span>
+        <span class="text-sm text-gray-400">{{ product.brand }}</span>
         <h6 class="text-base/5 font-medium mb-2 line-clamp-1">{{ product.name }}</h6>
         <span class="text-lg font-semibold text-red-600 tracking-tighter">S/. {{ product.price }}</span>
-        <button class="w-full bg-yellow-300 rounded-3xl text-xs font-medium px-4 py-2 mt-4 cursor-pointer">Agregar al carrito</button>
+        <button class="w-full bg-yellow-300 transition-opacity hover:opacity-80 rounded-3xl text-xs font-medium px-4 py-2 mt-4 cursor-pointer">Agregar al carrito</button>
     </div>
   </div>
 </template>
