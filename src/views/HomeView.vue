@@ -12,7 +12,7 @@ import FeaturedProducts from '../components/FeaturedProducts.vue';
             <h2 class="text-4xl font-bold text-blue-950">Computadoras</h2>
             <span class="text-sm font-light text-gray-500">Descuento de fin de mes</span>
             <div class="mt-4">
-              <a href="#" class="inline-block bg-blue-900 text-white text-sm font-medium rounded-4xl py-2 px-4 cursor-pointer">
+              <a href="#" class="inline-block bg-blue-900 transition-opacity hover:opacity-80 text-white text-sm font-medium rounded-4xl py-2 px-4 cursor-pointer">
               Comprar
               </a>
             </div>
@@ -24,7 +24,7 @@ import FeaturedProducts from '../components/FeaturedProducts.vue';
             <h2 class="text-4xl font-bold text-blue-950">Playstation</h2>
             <span class="text-sm font-light text-gray-500">Descuento de fin de mes</span>
             <div class="mt-4">
-              <a href="#" class="inline-block bg-blue-900 text-white text-sm font-medium rounded-4xl py-2 px-4 cursor-pointer">
+              <a href="#" class="inline-block bg-blue-900 transition-opacity hover:opacity-80 text-white text-sm font-medium rounded-4xl py-2 px-4 cursor-pointer">
               Comprar
               </a>
             </div>

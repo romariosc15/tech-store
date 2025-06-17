@@ -41,7 +41,7 @@ const onShowCategories = () => {
     </div>
     <div class="flex flex-row justify-between items-center mt-4">
       <div class="relative">
-        <button class="bg-sky-400 text-white text-sm rounded-4xl py-3 px-6 cursor-pointer" @click="onShowCategories">
+        <button class="bg-sky-400 text-white text-sm rounded-4xl py-3 px-6 cursor-pointer transition-opacity hover:opacity-80" @click="onShowCategories">
           <FontAwesomeIcon :icon="faBars" />
           <span class="mx-4 font-semibold">CATEGORIES</span>
           <FontAwesomeIcon :icon="faChevronDown" />
@@ -57,7 +57,7 @@ const onShowCategories = () => {
           <div class="py-1" role="none">
             <RouterLink
               to="#"
-              class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+              class="block px-4 py-2 text-sm transition-colors text-gray-600 hover:bg-sky-100 hover:text-sky-500"
               role="menuitem"
               tabindex="-1"
               id="menu-item-0"
@@ -66,7 +66,7 @@ const onShowCategories = () => {
             </RouterLink>
             <RouterLink
               to="#"
-              class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+              class="block px-4 py-2 text-sm transition-colors text-gray-600 hover:bg-sky-100 hover:text-sky-500"
               role="menuitem"
               tabindex="-1"
               id="menu-item-1"
@@ -75,7 +75,7 @@ const onShowCategories = () => {
             </RouterLink>
             <RouterLink
               to="#"
-              class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+              class="block px-4 py-2 text-sm transition-colors text-gray-600 hover:bg-sky-100 hover:text-sky-500"
               role="menuitem"
               tabindex="-1"
               id="menu-item-2"

@@ -100,15 +100,15 @@ const getProductClasses = (currentIndex) => {
             <h7 class="text-base font-semibold text-blue-950">CATEGORIES</h7>
             <ul class="text-gray-500 font-light space-y-2 mt-3">
               <li class="flex items-center">
-                <input class="mr-2" type="checkbox" id="category-1">
+                <input class="mr-2 cursor-pointer" type="checkbox" id="category-1">
                 <label class="text-sm" for="category-1">Category 1</label>
               </li>
               <li class="flex items-center">
-                <input class="mr-2" type="checkbox" id="category-2">
+                <input class="mr-2 cursor-pointer" type="checkbox" id="category-2">
                 <label class="text-sm" for="category-2">Category 2</label>
               </li>
               <li class="flex items-center">
-                <input class="mr-2" type="checkbox" id="category-3">
+                <input class="mr-2 cursor-pointer" type="checkbox" id="category-3">
                 <label class="text-sm" for="category-3">Category 3</label>
               </li>
             </ul>
@@ -117,15 +117,15 @@ const getProductClasses = (currentIndex) => {
             <h7 class="text-base font-semibold text-blue-950">BRANDS</h7>
             <ul class="text-gray-500 font-light space-y-2 mt-3">
               <li class="flex items-center">
-                <input class="mr-2" type="checkbox" id="brand-1">
+                <input class="mr-2 cursor-pointer" type="checkbox" id="brand-1">
                 <label class="text-sm" for="brand-1">Sony</label>
               </li>
               <li class="flex items-center">
-                <input class="mr-2" type="checkbox" id="brand-2">
+                <input class="mr-2 cursor-pointer" type="checkbox" id="brand-2">
                 <label class="text-sm" for="brand-2">Apple</label>
               </li>
               <li class="flex items-center">
-                <input class="mr-2" type="checkbox" id="brand-3">
+                <input class="mr-2 cursor-pointer" type="checkbox" id="brand-3">
                 <label class="text-sm" for="brand-3">PlayStation</label>
               </li>
             </ul>
