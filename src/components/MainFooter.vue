@@ -10,28 +10,28 @@ const navLinks = [
 ]
 </script>
 <template>
-  <footer class="bg-slate-100 px-48 pb-8">
-    <div class="grid grid-cols-4 font-medium">
-      <div class="flex flex-row my-8 py-2 border-r border-gray-300 text-gray-800">
+  <footer class="bg-slate-100 px-4 md:px-12 xl:px-28 2xl:px-48 pb-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 font-medium py-8 gap-y-8">
+      <div class="flex flex-row justify-center items-center py-2 pr-4 border-r border-gray-300 text-gray-800">
         <FontAwesomeIcon class="text-lg mr-3" :icon="faComputer" />
         <h6 class="text-sm">Great variety of products</h6>
       </div>
-      <div class="flex flex-row justify-center items-center my-8 py-2 border-r border-gray-300 text-gray-800">
+      <div class="flex flex-row justify-center items-center py-2 px-4 border-r-none md:border-r border-gray-300 text-gray-800">
         <FontAwesomeIcon class="mr-3" :icon="faTruck" />
         <h6 class="text-sm">Free delivery for order over $70</h6>
       </div>
-      <div class="flex flex-row justify-center items-center my-8 py-2 border-r border-gray-300 text-gray-800">
+      <div class="flex flex-row justify-center items-center py-2 px-4 border-r border-gray-300 text-gray-800">
         <FontAwesomeIcon class="text-lg mr-3" :icon="faPercent" />
         <h6 class="text-sm">Daily mega discounts</h6>
       </div>
-      <div class="flex flex-row justify-center items-center my-8 py-2 text-gray-800">
+      <div class="flex flex-row justify-center items-center py-2 pl-4 text-gray-800">
         <FontAwesomeIcon class="mr-3" :icon="faSackDollar" />
         <h6 class="text-sm">Best price on the market</h6>
       </div>
     </div>
-    <div class="grid grid-cols-2 pt-8 border-t border-t-gray-300 text-gray-800">
-      <p class="text-sm">Desarrollado por Romario Sarmiento en el año 2025</p>
-      <ul class="flex flex-row gap-4 justify-end">
+    <div class="grid grid-cols-1 lg:grid-cols-2 pt-8 border-t border-t-gray-300 text-gray-800">
+      <p class="text-sm text-center lg:text-left mb-4 lg:mb-0">Desarrollado por Romario Sarmiento</p>
+      <ul class="flex flex-row gap-4 justify-center lg:justify-end">
         <li v-for="(link, key) in navLinks" :key="key">
           <RouterLink class="text-sm hover:underline" :to="link.path">{{link.name}}</RouterLink>
         </li>

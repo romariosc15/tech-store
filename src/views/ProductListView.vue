@@ -80,7 +80,7 @@ const products = [
       price: 2699.99,
     },
 ];
-const PRODUCT_LIST_INDEXES = [3, 7, 11, 15, 19];
+const PRODUCT_LIST_INDEXES = [3, 7, 11, 15, 19, 23];
 const getProductClasses = (currentIndex) => {
   const productsLength = products.length - 1;
     let result = '';

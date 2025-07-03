@@ -1,6 +1,31 @@
 <script setup>
 import { useAssets } from '../composables/index';
 import { RouterLink } from 'vue-router';
+import 'vue3-carousel/carousel.css';
+import { Carousel, Slide, Navigation } from 'vue3-carousel';
+const carouselConfig = {
+    height: '100%',
+    itemsToShow: 1,
+    gap: 0,
+    wrapAround: true,
+    breakpoints: {
+        640: {
+            itemsToShow: 2,
+        },
+        768: {
+            itemsToShow: 2,
+        },
+        1024: {
+            itemsToShow: 3,
+        },
+        1280: {
+            itemsToShow: 4,
+        },
+        1536: {
+            itemsToShow: 4,
+        }
+    }
+};
 const products = [
     {
         id: 1,
@@ -38,34 +63,30 @@ const products = [
         price: 4999.99,
     },
 ];
-const getRoundedClasses = (currentIndex) => {
-    const lastIndex = products.length - 1;
-    let result = '';
-    if(currentIndex === 0) result += 'rounded-bl-lg rounded-tl-lg';
-    else if(lastIndex === currentIndex) result += 'border-r rounded-br-lg rounded-tr-lg';
-    return result;
-};
 </script>
 
 <template>
   <h5 class="text-lg font-semibold">PRODUCTOS DESTACADOS</h5>
   <p class="text-sm font-light text-gray-500">Productos mas vendidos durante el mes de Mayo.</p>
-  <div class="grid grid-cols-5 mt-6">
-    <div
-        class="p-4 border-l border-t border-b border-gray-200"
-        v-for="(product, key) in products"
-        :class="getRoundedClasses(key)"
-        :key="key"
-    >
-        <RouterLink :to="`/product/${product.id}`">
-            <img class="w-full h-[200px] object-cover px-2 py-4" :src="useAssets(`/src/assets/images/products/${product.image}`)" alt="">
-        </RouterLink>
-        <span class="text-sm text-gray-400">{{ product.brand }}</span>
-        <h6 class="text-base/5 font-medium mb-2 line-clamp-1">{{ product.name }}</h6>
-        <span class="text-lg font-semibold text-red-600 tracking-tighter">S/. {{ product.price }}</span>
-        <button class="w-full bg-yellow-300 transition-opacity hover:opacity-80 rounded-3xl text-xs font-medium px-4 py-2 mt-4 cursor-pointer">Agregar al carrito</button>
-    </div>
-  </div>
+  <Carousel class="mt-6" v-bind="carouselConfig">
+    <Slide v-for="product in products" :key="product.id">
+        <div
+            class="p-4 border rounded-lg border-gray-200"
+        >
+            <RouterLink :to="`/product/${product.id}`">
+                <img class="w-[270px] md:w-[260px] lg:w-[250px] xl:w-[200px] 2xl:w-[230px] h-[250px] md:h-[230px] lg:h-[240px] xl:h-[200px] 2xl:h-[230px] object-cover px-2 py-4" :src="useAssets(`/src/assets/images/products/${product.image}`)" :alt="product.name">
+            </RouterLink>
+            <span class="text-sm text-gray-400">{{ product.brand }}</span>
+            <h6 class="text-base/5 font-medium mb-2 line-clamp-1">{{ product.name }}</h6>
+            <span class="text-lg font-semibold text-red-600 tracking-tighter">S/. {{ product.price }}</span>
+            <button class="w-full bg-yellow-300 transition-opacity hover:opacity-80 rounded-3xl text-xs font-medium px-4 py-2 mt-4 cursor-pointer">Agregar al carrito</button>
+        </div>
+    </Slide>
+
+    <template #addons>
+      <Navigation />
+    </template>
+  </Carousel>
 </template>
 
 <style scoped>
