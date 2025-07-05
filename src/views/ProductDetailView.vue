@@ -17,10 +17,10 @@ const product = {
 
 <template>
   <main>
-    <div class="px-48 mt-12 mb-16">
-      <div class="bg-slate-100 p-12 rounded-lg">
+    <div class="px-4 md:px-12 xl:px-28 2xl:px-48 mt-12 mb-16">
+      <div class="bg-slate-100 p-4 md:p-8 xl:p-10 2xl:p-12 rounded-lg">
         <h5 class="text-2xl font-bold text-gray-800 mb-2">{{ product.name }}</h5>
-        <div class="flex flex-row">
+        <div class="flex flex-row mb-4">
           <p class="text-sm pr-4 border-r border-gray-300">
             <span class="text-gray-500 mr-2">Brand:</span>
             <span class="text-gray-700 font-medium">{{ product.brand }}</span>
@@ -30,14 +30,14 @@ const product = {
             <span class="text-gray-700 font-medium">{{ product.sku }}</span>
           </p>
         </div>
-        <div class="grid grid-cols-3 gap-12">
-          <img class="w-full h-[350px] object-cover px-2 py-4" :src="useAssets(`/src/assets/images/products/${product.image}`)" alt="">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 xl:gap-10 2xl:gap-12">
+          <img class="w-full h-[300px] md:h-[325px] xl:h-[350px] object-cover" :src="useAssets(`/src/assets/images/products/${product.image}`)" alt="">
           <div class="">
             <span class="text-2xl font-bold text-red-600 tracking-wide">S/. {{ product.price }}</span>
             <div class="mt-2">
               <span class="bg-green-200 text-green-600 py-1.5 px-3 rounded-full text-xs font-medium">EN STOCK</span>
             </div>
-            <p class="text-sm text-gray-800 mt-4 tracking-wide">{{ product.description }}</p>
+            <p class="text-xs xl:text-sm text-gray-800 mt-4 tracking-wide">{{ product.description }}</p>
             <div class="flex flex-row justify-between border-b border-gray-300 mt-4 pb-6 items-center">
               <div class="space-x-4">
                 <button class="bg-gray-200 transition-colors hover:bg-yellow-300 w-10 h-10 rounded-full cursor-pointer">
@@ -48,7 +48,7 @@ const product = {
                   <FontAwesomeIcon size="xs" :icon="faPlus" />
                 </button>
               </div>
-              <button class="inline-block bg-blue-900 transition-opacity hover:opacity-80 text-white text-sm font-medium rounded-4xl py-3 px-8 cursor-pointer">
+              <button class="inline-block bg-blue-900 transition-opacity hover:opacity-80 text-white text-sm font-medium rounded-4xl py-2.5 xl:py-3 px-6 xl:px-8 cursor-pointer">
                 Add to cart
               </button>
             </div>
@@ -64,7 +64,7 @@ const product = {
             </div>
           </div>
           <div>
-            <div class="bg-white text-gray-800 rounded-lg p-8 space-y-4">
+            <div class="bg-white text-gray-800 rounded-lg p-6 lg:p-5 xl:p-8 space-y-4">
               <div class="flex flex-row items-center gap-4">
                 <FontAwesomeIcon :icon="faTruck" />
                 <h6 class="text-xs">Free Shipping apply to all orders over $299</h6>

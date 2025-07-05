@@ -23,7 +23,10 @@ const carouselConfig = {
         },
         1536: {
             itemsToShow: 4,
-        }
+        },
+        1792: {
+            itemsToShow: 5,
+        },
     }
 };
 const products = [

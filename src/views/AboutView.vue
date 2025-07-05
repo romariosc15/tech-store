@@ -1,14 +1,14 @@
 <template>
-  <div class="about h-[500px] bg-no-repeat bg-cover flex flex-col justify-center items-center gap-2">
-    <h1 class="text-6xl font-extrabold text-white tracking-wider">About us</h1>
+  <div class="about h-[400px] xl:h-[500px] bg-no-repeat bg-cover flex flex-col justify-center items-center gap-2">
+    <h1 class="text-5xl xl:text-6xl font-extrabold text-white tracking-wider">About us</h1>
     <p class="text-xl font-medium text-white tracking-wider">Our success story</p>
   </div>
-  <div class="px-48 mt-12 mb-16 space-y-6 text-gray-800">
+  <div class="px-4 md:px-12 xl:px-28 2xl:px-48 mt-12 mb-16 space-y-6 text-gray-800 text-sm md:text-base">
     <p>In nec purus eget neque accumsan finibus. Duis condimentum elit ut libero commodo iaculis. Donec augue diam, tristique et ultricies nec, consectetur quis enim. Nullam id rutrum ex. Aliquam a lectus id lacus rhoncus dapibus non ac justo. Vivamus lacinia vestibulum metus in dapibus. Vestibulum sit amet sollicitudin enim. Ut id interdum turpis. Curabitur porta auctor quam, pretium facilisis nisl. Pellentesque efficitur elit ante, vel vulputate tortor blandit nec.</p>
     <p>
       In nec purus eget neque accumsan finibus. Duis condimentum elit ut libero commodo iaculis. Donec augue diam, tristique et ultricies nec, consectetur quis enim. Nullam id rutrum ex. Aliquam a lectus id lacus rhoncus dapibus non ac justo. Vivamus lacinia vestibulum metus in dapibus. Vestibulum sit amet sollicitudin enim. Ut id interdum turpis. Curabitur porta auctor quam, pretium facilisis nisl. Pellentesque efficitur elit ante, vel vulputate tortor blandit nec.
     </p>
-    <div class="grid grid-cols-2 gap-12 py-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 xl:gap-12 py-4 md:py-6">
       <img class="w-full h-[800px] object-cover" src="/src/assets/images//about-us/ceo.png" alt="">
       <div>
         <span>Juan Flores - CEO</span>
