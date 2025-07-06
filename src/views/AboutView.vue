@@ -9,7 +9,7 @@
       In nec purus eget neque accumsan finibus. Duis condimentum elit ut libero commodo iaculis. Donec augue diam, tristique et ultricies nec, consectetur quis enim. Nullam id rutrum ex. Aliquam a lectus id lacus rhoncus dapibus non ac justo. Vivamus lacinia vestibulum metus in dapibus. Vestibulum sit amet sollicitudin enim. Ut id interdum turpis. Curabitur porta auctor quam, pretium facilisis nisl. Pellentesque efficitur elit ante, vel vulputate tortor blandit nec.
     </p>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 xl:gap-12 py-4 md:py-6">
-      <img class="w-full h-[800px] object-cover" src="/src/assets/images//about-us/ceo.png" alt="">
+      <img class="w-full h-[800px] object-cover rounded-lg" src="/src/assets/images//about-us/ceo.png" alt="">
       <div>
         <span>Juan Flores - CEO</span>
         <h3 class="text-3xl font-semibold mt-4 mb-6">Duis convallis luctus pretium. Pellentesque habitant morbi</h3>

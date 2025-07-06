@@ -1,13 +1,8 @@
 <script setup>
-import { RouterLink } from 'vue-router'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faComputer, faTruck, faPercent, faSackDollar } from '@fortawesome/free-solid-svg-icons'
-const navLinks = [
-  {name: 'Home', path: '/'},
-  {name: 'Shop', path: '/shop'},
-  {name: 'About', path: '/about'},
-  {name: 'Contact', path: '/contact'},
-]
+import { RouterLink } from 'vue-router';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { faComputer, faTruck, faPercent, faSackDollar } from '@fortawesome/free-solid-svg-icons';
+import { footerLinks } from '../mocks/navigation';
 </script>
 <template>
   <footer class="bg-slate-100 px-4 md:px-12 xl:px-28 2xl:px-48 pb-6 md:pb-8">
@@ -32,7 +27,7 @@ const navLinks = [
     <div class="grid grid-cols-1 lg:grid-cols-2 pt-6 md:pt-8 border-t border-t-gray-300 text-gray-800">
       <p class="text-sm text-center lg:text-left mb-4 lg:mb-0">Desarrollado por Romario Sarmiento</p>
       <ul class="flex flex-row gap-4 justify-center lg:justify-end">
-        <li v-for="(link, key) in navLinks" :key="key">
+        <li v-for="(link, key) in footerLinks" :key="key">
           <RouterLink class="text-sm hover:underline" :to="link.path">{{link.name}}</RouterLink>
         </li>
       </ul>

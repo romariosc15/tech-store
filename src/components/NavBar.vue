@@ -2,13 +2,8 @@
 import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { faUser, faShoppingCart, faBars, faChevronDown, faHouse, faShop, faBuilding, faPhoneVolume } from '@fortawesome/free-solid-svg-icons';
-const navLinks = [
-  {name: 'HOME', path: '/', icon: faHouse},
-  {name: 'SHOP', path: '/products', icon: faShop},
-  {name: 'ABOUT', path: '/about', icon: faBuilding},
-  {name: 'CONTACT', path: '/contact', icon: faPhoneVolume},
-];
+import { faUser, faShoppingCart, faBars, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { navBarLinks } from '../mocks/navigation';
 let isCategoriesDropdownVisible = ref(false);
 const onShowCategories = () => {
   isCategoriesDropdownVisible.value = !isCategoriesDropdownVisible.value;
@@ -87,7 +82,7 @@ const onShowCategories = () => {
       </div>
       <div>
         <ul class="flex flex-row gap-1 text-gray-600">
-          <li v-for="(link, key) in navLinks" :key="key">
+          <li v-for="(link, key) in navBarLinks" :key="key">
             <RouterLink class="font-medium transition-colors hover:bg-sky-100 hover:text-sky-500 px-5 py-2.5 rounded-4xl" :to="link.path">
               <FontAwesomeIcon class="mr-2" :icon="link.icon" />
               <span class="text-sm">{{link.name}}</span>

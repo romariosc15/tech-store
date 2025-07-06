@@ -1,71 +1,10 @@
 <script setup>
 import { useAssets } from '../composables/index';
+import { featuredProductsConfig as carouselConfig } from '../config/carouselConfig';
+import { featuredProducts as products } from '../mocks/products';
 import { RouterLink } from 'vue-router';
-import 'vue3-carousel/carousel.css';
 import { Carousel, Slide, Navigation } from 'vue3-carousel';
-const carouselConfig = {
-    height: '100%',
-    itemsToShow: 1,
-    gap: 0,
-    wrapAround: true,
-    breakpoints: {
-        640: {
-            itemsToShow: 2,
-        },
-        768: {
-            itemsToShow: 2,
-        },
-        1024: {
-            itemsToShow: 3,
-        },
-        1280: {
-            itemsToShow: 4,
-        },
-        1536: {
-            itemsToShow: 4,
-        },
-        1792: {
-            itemsToShow: 5,
-        },
-    }
-};
-const products = [
-    {
-        id: 1,
-        image: 'consola-ps5.png',
-        name: 'Consola de PlayStation 5',
-        brand: 'Sony',
-        price: 2199.99,
-    },
-    {
-        id: 2,
-        image: 'mando-ps5.png',
-        name: 'Mando de PlayStation 5',
-        brand: 'Sony',
-        price: 299.99,
-    },
-    {
-        id: 3,
-        image: 'consola-xbox-series.png',
-        name: 'Consola de XBOX Series S',
-        brand: 'Microsoft',
-        price: 2399.99,
-    },
-    {
-        id: 4,
-        image: 'mando-xbox-series.png',
-        name: 'Mando de XBOX Series X - S',
-        brand: 'Microsoft',
-        price: 299.99,
-    },
-    {
-        id: 5,
-        image: 'macbook-air-m4.png',
-        name: 'MacBook Air M4 2025',
-        brand: 'Apple',
-        price: 4999.99,
-    },
-];
+import 'vue3-carousel/carousel.css';
 </script>
 
 <template>
@@ -85,7 +24,6 @@ const products = [
             <button class="w-full bg-yellow-300 transition-opacity hover:opacity-80 rounded-3xl text-xs font-medium px-4 py-2 mt-4 cursor-pointer">Agregar al carrito</button>
         </div>
     </Slide>
-
     <template #addons>
       <Navigation />
     </template>
