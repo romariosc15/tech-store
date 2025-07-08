@@ -1,24 +1,27 @@
 <script setup>
+import MainBreadcrumb from '../components/MainBreadcrumb.vue';
 import { useAssets } from '../composables/index';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faMinus, faPlus, faTruck, faRankingStar, faSackDollar } from '@fortawesome/free-solid-svg-icons';
-const product = {
-  id: 6,
-  sku: 'ABC1001',
-  image: 'consola-ps5.png',
-  name: 'Consola de PlayStation 5',
-  description: 'Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent',
-  brand: 'Sony',
-  category: 'Consola de videojuegos',
-  tags: ['ps5', 'consola', 'gaming', 'juegos'],
-  price: 2199.99,
-}
+import { productDetail } from '../mocks/products';
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
+const product = productDetail[route.params.id];
+
+const breadcrumbRoute = [
+  { name: 'Home', url: '/home' },
+  { name: product.category, url: '/products?category=category' },
+  { name: product.name, url: `/product/${product.id}` },
+];
+
 </script>
 
 <template>
   <main>
-    <div class="px-4 md:px-12 xl:px-28 2xl:px-48 mt-12 mb-16">
-      <div class="bg-slate-100 p-4 md:p-8 xl:p-10 2xl:p-12 rounded-lg">
+    <div class="px-4 md:px-12 xl:px-28 2xl:px-48">
+      <MainBreadcrumb :route="breadcrumbRoute" />
+      <div class="bg-slate-100 p-4 md:p-8 xl:p-10 2xl:p-12 mt-4 mb-24 rounded-lg">
         <h5 class="text-2xl font-bold text-gray-800 mb-2">{{ product.name }}</h5>
         <div class="flex flex-row mb-4">
           <p class="text-sm pr-4 border-r border-gray-300">
@@ -31,7 +34,7 @@ const product = {
           </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 xl:gap-10 2xl:gap-12">
-          <img class="w-full h-[300px] md:h-[325px] xl:h-[350px] object-cover" :src="useAssets(`/src/assets/images/products/${product.image}`)" alt="">
+          <img class="w-full h-[300px] md:h-[325px] xl:h-[350px] 2xl:h-[400px] object-cover" :src="useAssets(`/src/assets/images/products/${product.image}`)" alt="">
           <div class="">
             <span class="text-2xl font-bold text-red-600 tracking-wide">S/. {{ product.price }}</span>
             <div class="mt-2">

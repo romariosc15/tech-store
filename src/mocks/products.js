@@ -115,3 +115,39 @@ export const productList = [
       price: 2699.99,
     },
 ];
+
+export const productDetail = {
+  1: {
+    id: 1,
+    sku: 'ABC1001',
+    image: 'consola-nintendo-switch.png',
+    name: 'Consola Nintendo Switch',
+    brand: 'Nintendo',
+    price: 1799.99,
+    description: 'Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent',
+    category: 'Consola de videojuegos',
+    tags: ['switch', 'consola', 'gaming', 'juegos'],
+  },
+  2: {
+    id: 2,
+    sku: 'ABC1002',
+    image: 'audifonos-logitech-pro-x-wireless.png',
+    name: 'Audifonos Logitech Pro X Wireless',
+    brand: 'Logitech',
+    price: 299.99,
+    description: 'Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent',
+    category: 'Accesorios de computadora',
+    tags: ['auriculares', 'pc', 'gaming', 'periferico'],
+  },
+  3: {
+    id: 3,
+    sku: 'ABC1003',
+    image: 'mouse-logitech-pro-wireless.png',
+    name: 'Mouse Logitech Pro Wireless',
+    brand: 'Logitech',
+    price: 349.99,
+    description: 'Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent',
+    category: 'Accesorios de computadora',
+    tags: ['mouse', 'pc', 'gaming', 'periferico'],
+  },
+};
