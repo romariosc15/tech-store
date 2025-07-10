@@ -4,7 +4,7 @@ import FeaturedProducts from '../components/FeaturedProducts.vue';
 
 <template>
   <main>
-    <div class="px-4 md:px-12 xl:px-28 2xl:px-48 mt-12 mb-16">
+    <div class="px-4 md:px-12 xl:px-28 2xl:px-48 mt-12 mb-24">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 xl:gap-8 mb-8">
         <div class="home-banner-1 w-full h-[275px] bg-center bg-no-repeat bg-cover rounded-lg flex justify-end items-center p-8">
           <div>

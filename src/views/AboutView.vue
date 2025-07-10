@@ -3,7 +3,7 @@
     <h1 class="text-5xl xl:text-6xl font-extrabold text-white tracking-wider">About us</h1>
     <p class="text-xl font-medium text-white tracking-wider">Our success story</p>
   </div>
-  <div class="px-4 md:px-12 xl:px-28 2xl:px-48 mt-12 mb-16 space-y-6 text-gray-800 text-sm md:text-base">
+  <div class="px-4 md:px-12 xl:px-28 2xl:px-48 mt-12 mb-24 space-y-6 text-gray-800 text-sm md:text-base">
     <p>In nec purus eget neque accumsan finibus. Duis condimentum elit ut libero commodo iaculis. Donec augue diam, tristique et ultricies nec, consectetur quis enim. Nullam id rutrum ex. Aliquam a lectus id lacus rhoncus dapibus non ac justo. Vivamus lacinia vestibulum metus in dapibus. Vestibulum sit amet sollicitudin enim. Ut id interdum turpis. Curabitur porta auctor quam, pretium facilisis nisl. Pellentesque efficitur elit ante, vel vulputate tortor blandit nec.</p>
     <p>
       In nec purus eget neque accumsan finibus. Duis condimentum elit ut libero commodo iaculis. Donec augue diam, tristique et ultricies nec, consectetur quis enim. Nullam id rutrum ex. Aliquam a lectus id lacus rhoncus dapibus non ac justo. Vivamus lacinia vestibulum metus in dapibus. Vestibulum sit amet sollicitudin enim. Ut id interdum turpis. Curabitur porta auctor quam, pretium facilisis nisl. Pellentesque efficitur elit ante, vel vulputate tortor blandit nec.

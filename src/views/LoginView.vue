@@ -15,7 +15,7 @@ const breadcrumbRoute = [
 <template>
   <div class="px-4 md:px-12 xl:px-28 2xl:px-48">
     <MainBreadcrumb :route="breadcrumbRoute" />
-    <div class="px-12 py-16 my-24 mx-auto border rounded-lg border-gray-200 w-[500px]">
+    <div class="px-12 py-16 mt-16 mb-32 mx-auto border rounded-lg border-gray-200 w-[500px]">
       <ul class="flex flex-row justify-center gap-8">
         <li>
           <a class="text-lg font-semibold" :class="hasOpacityTab('login')" href="#" @click.prevent="setTab('login')">LOGIN</a>
