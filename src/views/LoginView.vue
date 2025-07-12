@@ -1,6 +1,6 @@
 <script setup>
 import MainBreadcrumb from '../components/MainBreadcrumb.vue';
-import { ref } from 'vue'
+import { ref } from 'vue';
 
 let currentTab = ref('login');
 const isVisibleTab = (tab) => currentTab.value === tab ? 'block' : 'hidden';

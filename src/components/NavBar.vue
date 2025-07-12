@@ -4,6 +4,7 @@ import { RouterLink } from 'vue-router';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faUser, faShoppingCart, faBars, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { navBarLinks } from '../mocks/navigation';
+
 let isCategoriesDropdownVisible = ref(false);
 const onShowCategories = () => {
   isCategoriesDropdownVisible.value = !isCategoriesDropdownVisible.value;
@@ -83,7 +84,7 @@ const onShowCategories = () => {
       <div>
         <ul class="flex flex-row gap-1 text-gray-600">
           <li v-for="(link, key) in navBarLinks" :key="key">
-            <RouterLink class="font-medium transition-colors hover:bg-sky-100 hover:text-sky-500 px-5 py-2.5 rounded-4xl" :to="link.path">
+            <RouterLink class="font-medium uppercase transition-colors hover:bg-sky-100 hover:text-sky-500 px-5 py-2.5 rounded-4xl" :to="link.path">
               <FontAwesomeIcon class="mr-2" :icon="link.icon" />
               <span class="text-sm">{{link.name}}</span>
             </RouterLink>
