@@ -14,7 +14,7 @@ const onShowCategories = () => {
 <template>
   <nav class="px-4 md:px-12 xl:px-28 2xl:px-48 pt-6 pb-4 border-b border-b-gray-200">
     <div class="flex flex-row justify-between items-center">
-      <h1 class="text-2xl md:text-3xl xl:text-4xl text-blue-900 font-black">TECH STORE</h1>
+      <img class="w-[125px]" src="/src/assets/images/logo.png" alt="Tech Store logo">
       <input class="bg-gray-100 hidden lg:block text-sm w-[400px] xl:w-[500px] h-12 px-6 rounded-md" type="text" placeholder="Search products ...">
       <div>
         <ul class="flex flex-row gap-4 text-gray-600">

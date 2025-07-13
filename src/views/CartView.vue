@@ -1,7 +1,7 @@
 <script setup>
 import MainBreadcrumb from '../components/MainBreadcrumb.vue';
 import NewsletterBanner from '../components/NewsletterBanner.vue';
-import { singleProductCart as cart } from '../mocks/cart';
+import { severalProductsCart as cart } from '../mocks/cart';
 import { useAssets } from '../composables/index';
 
 const breadcrumbRoute = [
@@ -35,7 +35,7 @@ const breadcrumbRoute = [
         <tbody>
           <tr class="border-b border-gray-200 text-gray-800" v-for="product in cart" :key="product.productId">
             <td>
-              <img class="w-[100px] object-cover" :src="useAssets(`/src/assets/images/products/${product.image}`)" :alt="product.name">
+              <img class="h-[50px] object-cover mx-auto" :src="useAssets(`/src/assets/images/products/${product.image}`)" :alt="product.name">
             </td>
             <td>{{ product.name }}</td>
             <td>{{ product.price }}</td>
