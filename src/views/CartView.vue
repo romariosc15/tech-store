@@ -1,13 +1,24 @@
 <script setup>
 import MainBreadcrumb from '../components/MainBreadcrumb.vue';
 import NewsletterBanner from '../components/NewsletterBanner.vue';
-import { severalProductsCart as cart } from '../mocks/cart';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
+
 import { useAssets } from '../composables/index';
+import { storeToRefs } from 'pinia';
 
 const breadcrumbRoute = [
   { name: 'Home', url: '/home' },
   { name: 'Cart', url: '/cart' },
 ];
+
+import { useCartStore } from '@/stores/cart';
+
+const cartStore = useCartStore();
+
+const { cart, totalPrice } = storeToRefs(cartStore);
+const { removeProductFromCart } = cartStore;
+
 </script>
 
 <template>
@@ -33,7 +44,7 @@ const breadcrumbRoute = [
           </tr>
         </thead>
         <tbody>
-          <tr class="border-b border-gray-200 text-gray-800" v-for="product in cart" :key="product.productId">
+          <tr class="border-b border-gray-200 text-gray-800" v-for="product in cart" :key="product.id">
             <td>
               <img class="h-[50px] object-cover mx-auto" :src="useAssets(`/src/assets/images/products/${product.image}`)" :alt="product.name">
             </td>
@@ -41,7 +52,11 @@ const breadcrumbRoute = [
             <td>{{ product.price }}</td>
             <td>{{ product.quantity }}</td>
             <td>{{ product.price * product.quantity }}</td>
-            <td>X</td>
+            <td>
+              <button class="cursor-pointer" @click="removeProductFromCart(product.id)">
+                <FontAwesomeIcon size="1x" :icon="faXmark" />
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -49,13 +64,13 @@ const breadcrumbRoute = [
         <h6 class="text-lg pb-2 font-bold border-b border-gray-200">CART TOTALS</h6>
         <div class="flex flex-row items-center justify-between py-3 border-b border-gray-200">
           <span class="text-sm">Subtotal</span>
-          <span class="text-base font-medium">$19.90</span>
+          <span class="text-base font-medium">${{ totalPrice }}</span>
         </div>
         <div class="grid grid-cols-2 items-center py-3 border-b border-gray-200">
           <div class="text-sm">
             <span>Shipping</span>
           </div>
-          <div class="text-sm space-y-2">
+          <div class="text-sm space-y-2 text-right">
             <p>Flat rate: $5:00</p>
             <p>Local pickup</p>
           </div>
