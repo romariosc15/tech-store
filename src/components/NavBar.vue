@@ -4,6 +4,11 @@ import { RouterLink } from 'vue-router';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faUser, faShoppingCart, faBars, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { navBarLinks } from '../mocks/navigation';
+import { useCartStore } from '@/stores/cart';
+import { storeToRefs } from 'pinia';
+
+const cartStore = useCartStore();
+const { totalPrice, cart } = storeToRefs(cartStore);
 
 let isCategoriesDropdownVisible = ref(false);
 const onShowCategories = () => {
@@ -19,7 +24,7 @@ const onShowCategories = () => {
       </RouterLink>
       <input class="bg-gray-100 hidden lg:block text-sm w-[400px] xl:w-[500px] h-12 px-6 rounded-md" type="text" placeholder="Search products ...">
       <div>
-        <ul class="flex flex-row gap-4 text-gray-600">
+        <ul class="flex flex-row items-center gap-4 text-gray-600">
           <li>
             <RouterLink to="/login">
               <div class="w-10 h-10 transition-colors flex justify-center items-center rounded-full border border-gray-200 hover:bg-blue-900 hover:text-white">
@@ -28,9 +33,13 @@ const onShowCategories = () => {
             </RouterLink>
           </li>
           <li>
+            <span class="font-semibold">${{ totalPrice }}</span>
+          </li>
+          <li>
             <RouterLink to="/cart">
-              <div class="w-10 h-10 transition-colors flex justify-center items-center rounded-full border border-gray-200 hover:bg-blue-900 hover:text-white">
+              <div class="relative w-10 h-10 transition-colors flex justify-center items-center rounded-full border border-gray-200 hover:bg-blue-900 hover:text-white">
                 <FontAwesomeIcon class="text-sm" :icon="faShoppingCart" />
+                <span class="absolute top-0 -right-[8px] rounded-full text-xs w-5 h-5 flex items-center justify-center bg-red-400 text-white">{{ cart.length }}</span>
               </div>
             </RouterLink>
           </li>

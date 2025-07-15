@@ -10,10 +10,10 @@ export const useCartStore = defineStore('cart', () => {
   );
 
   const totalPrice = computed(() =>
-    cart.value.reduce((sum, item) => sum + item.price * item.quantity, 0)
+    cart.value.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2)
   );
 
-  function addToCart(newItem) {
+  function addProductToCart(newItem) {
     const existing = cart.value.find(item => item.id === newItem.id);
     if (existing) {
       existing.quantity += newItem.quantity;
@@ -26,5 +26,5 @@ export const useCartStore = defineStore('cart', () => {
     cart.value = cart.value.filter(item => item.id !== id);
   }
 
-  return { cart, totalItems, totalPrice, addToCart, removeProductFromCart };
+  return { cart, totalItems, totalPrice, addProductToCart, removeProductFromCart };
 });
