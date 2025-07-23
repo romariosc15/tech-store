@@ -4,7 +4,7 @@
 <template>
     <div class="bg-blue-900 px-4 md:px-12 xl:px-28 2xl:px-48 grid grid-cols-3 gap-16">
         <div class="text-gray-200 py-16 col-span-2">
-            <h6 class="text-base font-light">$20 discount for your first order</h6>
+            <h6 class="text-base font-light mb-2">$20 discount for your first order</h6>
             <h3 class="text-3xl font-bold mb-4">Join our newsletter and get...</h3>
             <p class="text-base font-medium text-gray-400">Join our email subscription now to get updates on promotions and coupons.</p>
             <div class="mt-6 space-x-3">

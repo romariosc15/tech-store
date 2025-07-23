@@ -11,10 +11,8 @@ import 'vue3-carousel/carousel.css';
   <h5 class="text-lg font-semibold">PRODUCTOS DESTACADOS</h5>
   <p class="text-sm font-light text-gray-500">Productos mas vendidos durante el mes de Mayo.</p>
   <Carousel class="mt-6" v-bind="carouselConfig">
-    <Slide v-for="product in products" :key="product.id">
-        <div
-            class="p-4 border rounded-lg border-gray-200"
-        >
+    <Slide class="border-t border-l border-b border-gray-200" v-for="product in products" :key="product.id">
+        <div class="p-4">
             <RouterLink :to="`/product/${product.id}`">
                 <img class="w-[270px] md:w-[260px] lg:w-[250px] xl:w-[200px] 2xl:w-[230px] h-[250px] md:h-[230px] lg:h-[240px] xl:h-[200px] 2xl:h-[230px] object-cover px-2 py-4" :src="useAssets(`/src/assets/images/products/${product.image}`)" :alt="product.name">
             </RouterLink>

@@ -1,5 +1,6 @@
 <script setup>
 import FeaturedProducts from '../components/FeaturedProducts.vue';
+import NewsletterBanner from '../components/NewsletterBanner.vue';
 </script>
 
 <template>
@@ -33,6 +34,7 @@ import FeaturedProducts from '../components/FeaturedProducts.vue';
       </div>
       <FeaturedProducts />
     </div>
+    <NewsletterBanner />
   </main>
 </template>
 

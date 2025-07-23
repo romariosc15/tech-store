@@ -39,7 +39,7 @@ const onShowCategories = () => {
             <RouterLink to="/cart">
               <div class="relative w-10 h-10 transition-colors flex justify-center items-center rounded-full border border-gray-200 hover:bg-blue-900 hover:text-white">
                 <FontAwesomeIcon class="text-sm" :icon="faShoppingCart" />
-                <span class="absolute top-0 -right-[8px] rounded-full text-xs w-5 h-5 flex items-center justify-center bg-red-400 text-white">{{ cart.length }}</span>
+                <span class="absolute top-0 -right-[12px] rounded-full text-xs w-5 h-5 flex items-center justify-center bg-red-400 text-white">{{ cart.length }}</span>
               </div>
             </RouterLink>
           </li>
