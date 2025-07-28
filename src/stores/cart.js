@@ -1,9 +1,8 @@
 import { ref, computed } from 'vue';
 import { defineStore } from 'pinia';
-import { severalProductsCart } from '../mocks/cart';
 
 export const useCartStore = defineStore('cart', () => {
-  const cart = ref(severalProductsCart);
+  const cart = ref([]);
 
   const totalItems = computed(() =>
     cart.value.reduce((sum, item) => sum + item.quantity, 0)
@@ -20,10 +19,12 @@ export const useCartStore = defineStore('cart', () => {
     } else {
       cart.value.push({ ...newItem });
     }
+    localStorage.setItem('cart', JSON.stringify(cart.value));
   }
 
   function removeProductFromCart(id) {
     cart.value = cart.value.filter(item => item.id !== id);
+    localStorage.setItem('cart', JSON.stringify(cart.value));
   }
 
   return { cart, totalItems, totalPrice, addProductToCart, removeProductFromCart };

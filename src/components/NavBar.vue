@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { RouterLink } from 'vue-router';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faUser, faShoppingCart, faBars, faChevronDown } from '@fortawesome/free-solid-svg-icons';
@@ -14,6 +14,12 @@ let isCategoriesDropdownVisible = ref(false);
 const onShowCategories = () => {
   isCategoriesDropdownVisible.value = !isCategoriesDropdownVisible.value;
 };
+
+onMounted(() => {
+  const cartStored = localStorage.getItem('cart');
+  if (cartStored) cartStore.cart = JSON.parse(cartStored);
+})
+
 </script>
 
 <template>

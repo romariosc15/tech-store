@@ -27,9 +27,9 @@ const { removeProductFromCart } = cartStore;
     <div v-if="cart.length === 0" class="px-12 py-16 mt-16 mb-32 text-center">
       <img class="w-[200px] mx-auto" src="/src/assets/images/cart/empty-cart.png" alt="Your cart is empty">
       <p class="text-gray-800 text-xl font-bold mb-4">Your cart is currently empty.</p>
-      <a href="#" class="inline-block bg-blue-900 transition-opacity hover:opacity-80 text-white text-base font-medium rounded-4xl py-3 px-8 cursor-pointer">
+      <RouterLink to="/" class="inline-block bg-blue-900 transition-opacity hover:opacity-80 text-white text-base font-medium rounded-4xl py-3 px-8 cursor-pointer">
         Return to shop
-      </a>
+      </RouterLink>
     </div>
     <div class="mt-16 mb-32 grid grid-cols-4 gap-8" v-else>
       <table class="cart-table col-span-3 text-sm h-fit">
