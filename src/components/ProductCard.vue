@@ -19,13 +19,13 @@ let isLoading = ref(false);
 const handleAddToCart = (product) => {
   isLoading.value = true;
   addProductToCart({...product, quantity: 1});
-  setTimeout(() => isLoading.value = false, 1000);
+  setTimeout(() => isLoading.value = false, 500);
 };
 </script>
 <template>
-    <div class="p-4 border -m-[0.5px] border-gray-200">
+    <div class="p-4">
         <RouterLink :to="`/product/${product.id}`">
-            <img class="w-full h-[200px] object-cover" :src="useAssets(`/src/assets/images/products/${product.image}`)" alt="">
+            <img class="w-[270px] md:w-[260px] lg:w-[250px] xl:w-[200px] 2xl:w-[230px] h-[250px] md:h-[230px] lg:h-[240px] xl:h-[200px] 2xl:h-[230px] object-cover px-2 py-4" :src="useAssets(`/src/assets/images/products/${product.image}`)" alt="">
         </RouterLink>
         <span class="text-sm font-light text-gray-500">{{ product.brand }}</span>
         <h6 class="text-base/5 font-medium mb-2 line-clamp-1">{{ product.name }}</h6>

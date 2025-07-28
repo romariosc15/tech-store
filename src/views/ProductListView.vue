@@ -61,11 +61,11 @@ const breadcrumbRoute = [
             </div>
           </div>
           <div class="grid grid-cols-2 md:grid-cols-4">
-            <ProductCard
-              v-for="product in products"
-              :product-data="product"
-              :key="product.id"
-            />
+            <div class="border border-gray-200 -m-[0.5px]" v-for="product in products" :key="product.id">
+              <ProductCard
+                :product-data="product"
+              />
+            </div>
           </div>
         </div>
       </div>
