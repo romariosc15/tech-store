@@ -30,15 +30,15 @@ const { removeProductFromCart } = cartStore;
         Return to shop
       </RouterLink>
     </div>
-    <div class="mt-16 mb-32 grid grid-cols-4 gap-8" v-else>
-      <table class="cart-table col-span-3 text-sm h-fit">
+    <div class="mt-8 md:mt-16 mb-16 md:mb-32 grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 gap-8" v-else>
+      <table class="cart-table col-span-1 lg:col-span-2 2xl:col-span-3 text-sm h-fit">
         <thead>
           <tr class="border-b border-gray-200 text-gray-700 text-left">
             <th></th>
             <th>Product</th>
             <th>Price</th>
             <th>Quantity</th>
-            <th>Subtotal</th>
+            <th class="hidden md:table-cell">Subtotal</th>
             <th></th>
           </tr>
         </thead>
@@ -49,8 +49,8 @@ const { removeProductFromCart } = cartStore;
             </td>
             <td>{{ product.name }}</td>
             <td>{{ product.price }}</td>
-            <td>{{ product.quantity }}</td>
-            <td>{{ product.price * product.quantity }}</td>
+            <td class="text-center">{{ product.quantity }}</td>
+            <td class="hidden md:table-cell">{{ product.price * product.quantity }}</td>
             <td>
               <button class="cursor-pointer" @click="removeProductFromCart(product.id)">
                 <FontAwesomeIcon size="1x" :icon="faXmark" />
