@@ -6,13 +6,12 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 import { useAssets } from '../composables/index';
 import { storeToRefs } from 'pinia';
+import { useCartStore } from '@/stores/cart';
 
 const breadcrumbRoute = [
   { name: 'Home', url: '/home' },
   { name: 'Cart', url: '/cart' },
 ];
-
-import { useCartStore } from '@/stores/cart';
 
 const cartStore = useCartStore();
 

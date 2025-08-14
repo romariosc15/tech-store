@@ -7,6 +7,10 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 import { useCartStore } from '@/stores/cart';
 
+import { useNotificationStore } from '@/stores/notification';
+const notificationStore = useNotificationStore();
+const { setNotification, setVisibility } = notificationStore;
+
 const { productData: product } = defineProps({
   productData: Object,
 });
@@ -17,9 +21,13 @@ const { addProductToCart } = cartStore;
 
 let isLoading = ref(false);
 const handleAddToCart = (product) => {
-  isLoading.value = true;
-  addProductToCart({...product, quantity: 1});
-  setTimeout(() => isLoading.value = false, 500);
+    isLoading.value = true;
+    addProductToCart({...product, quantity: 1});
+    setTimeout(() => {
+        isLoading.value = false;
+        setNotification({type: 'success', title: 'Success', message: 'Product added to cart successfully.'});
+        setVisibility(true);
+    }, 500);
 };
 </script>
 <template>

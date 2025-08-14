@@ -2,6 +2,7 @@
 import { RouterView } from 'vue-router';
 import NavBar from './components/NavBar.vue';
 import MainFooter from './components/MainFooter.vue';
+import NotificationMessage from './components/NotificationMessage.vue';
 </script>
 
 <template>
@@ -11,6 +12,7 @@ import MainFooter from './components/MainFooter.vue';
 
   <RouterView />
   <MainFooter />
+  <NotificationMessage />
 </template>
 
 <style scoped>
