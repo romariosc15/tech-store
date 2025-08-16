@@ -59,6 +59,7 @@ onMounted(() => {
       </div>
       <div class="md:hidden">
         <button
+          aria-label="Open navigation menu"
           @click="onShowDropdownMenu"
         >
           <FontAwesomeIcon class="text-xl" :icon="faBars" />
