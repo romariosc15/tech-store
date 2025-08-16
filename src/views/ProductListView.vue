@@ -60,7 +60,7 @@ const breadcrumbRoute = [
               <span class="text-sm font-light text-gray-500">Envíos disponibles a todo el país</span>
             </div>
           </div>
-          <div class="grid grid-cols-2 md:grid-cols-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
             <div class="border border-gray-200 -m-[0.5px]" v-for="product in products" :key="product.id">
               <ProductCard
                 :product-data="product"

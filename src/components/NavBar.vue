@@ -10,9 +10,15 @@ import { storeToRefs } from 'pinia';
 const cartStore = useCartStore();
 const { totalPrice, cart } = storeToRefs(cartStore);
 
-let isCategoriesDropdownVisible = ref(false);
+const isCategoriesDropdownVisible = ref(false);
+const isDropdownMenuVisible = ref(false);
+
 const onShowCategories = () => {
   isCategoriesDropdownVisible.value = !isCategoriesDropdownVisible.value;
+};
+
+const onShowDropdownMenu = () => {
+  isDropdownMenuVisible.value = !isDropdownMenuVisible.value;
 };
 
 onMounted(() => {
@@ -23,13 +29,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <nav class="px-4 md:px-12 xl:px-28 2xl:px-48 pt-6 pb-4 border-b border-b-gray-200">
+  <nav class="px-4 md:px-12 xl:px-28 2xl:px-48 pt-6 pb-4 border-b border-b-gray-200 relative">
     <div class="flex flex-row justify-between items-center">
       <RouterLink to="/">
         <img class="w-[125px]" src="/src/assets/images/logo.png" alt="Tech Store logo">
       </RouterLink>
       <input class="bg-gray-100 hidden lg:block text-sm w-[400px] xl:w-[500px] h-12 px-6 rounded-md" type="text" placeholder="Search products ...">
-      <div>
+      <div class="hidden md:block">
         <ul class="flex flex-row items-center gap-4 text-gray-600">
           <li>
             <RouterLink to="/login">
@@ -51,17 +57,54 @@ onMounted(() => {
           </li>
         </ul>
       </div>
+      <div class="md:hidden">
+        <button
+          @click="onShowDropdownMenu"
+        >
+          <FontAwesomeIcon class="text-xl" :icon="faBars" />
+        </button>
+        <div
+          class="bg-white absolute w-full top-[84px] left-1/2 -translate-x-1/2 shadow-lg"
+          v-show="isDropdownMenuVisible"
+        >
+          <ul class="py-2 text-gray-600">
+            <li v-for="(link, key) in navBarLinks" :key="key">
+              <RouterLink class="block font-medium uppercase transition-colors hover:bg-sky-100 hover:text-sky-500 px-5 py-2.5" :to="link.path">
+                <FontAwesomeIcon class="w-8 mr-2" :icon="link.icon" />
+                <span class="text-sm">{{link.name}}</span>
+              </RouterLink>
+            </li>
+          </ul>
+          <ul class="py-2 text-gray-600 border-gray-300 border-t">
+            <li>
+              <RouterLink class="block font-medium uppercase transition-colors hover:bg-sky-100 hover:text-sky-500 px-5 py-2.5" to="/login">
+                <FontAwesomeIcon class="w-8 mr-2" :icon="faUser" />
+                <span class="text-sm">Login</span>
+              </RouterLink>
+            </li>
+            <li>
+              <RouterLink class="block font-medium uppercase transition-colors hover:bg-sky-100 hover:text-sky-500 px-5 py-2.5" to="/cart">
+                <FontAwesomeIcon class="w-8 mr-2" :icon="faShoppingCart" />
+                <span class="text-sm">Shopping cart</span>
+              </RouterLink>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
     <div class="hidden lg:flex flex-row justify-between items-center mt-4">
       <div class="relative">
-        <button class="bg-sky-400 text-white text-sm rounded-4xl py-3 px-6 cursor-pointer transition-opacity hover:opacity-80" @click="onShowCategories">
+        <button
+          class="bg-sky-400 text-white text-sm rounded-4xl py-3 px-6 cursor-pointer transition-opacity hover:opacity-80"
+          @click="onShowCategories"
+        >
           <FontAwesomeIcon :icon="faBars" />
           <span class="mx-4 font-semibold">CATEGORIES</span>
           <FontAwesomeIcon :icon="faChevronDown" />
         </button>
         <div 
+          v-show="isCategoriesDropdownVisible"
           class="absolute left-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-hidden"
-          :class="isCategoriesDropdownVisible ? 'block' : 'hidden'"
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="menu-button"
