@@ -38,7 +38,7 @@ onMounted(() => {
       <div class="hidden md:block">
         <ul class="flex flex-row items-center gap-4 text-gray-600">
           <li>
-            <RouterLink to="/login">
+            <RouterLink aria-label="Login" to="/login">
               <div class="w-10 h-10 transition-colors flex justify-center items-center rounded-full border border-gray-200 hover:bg-blue-900 hover:text-white">
                 <FontAwesomeIcon class="text-sm" :icon="faUser" />
               </div>
@@ -48,7 +48,7 @@ onMounted(() => {
             <span class="font-semibold">${{ totalPrice }}</span>
           </li>
           <li>
-            <RouterLink to="/cart">
+            <RouterLink aria-label="Shopping cart" to="/cart">
               <div class="relative w-10 h-10 transition-colors flex justify-center items-center rounded-full border border-gray-200 hover:bg-blue-900 hover:text-white">
                 <FontAwesomeIcon class="text-sm" :icon="faShoppingCart" />
                 <span class="absolute top-0 -right-[12px] rounded-full text-xs w-5 h-5 flex items-center justify-center bg-red-400 text-white">{{ cart.length }}</span>

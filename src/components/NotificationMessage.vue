@@ -21,7 +21,7 @@ watch(isNotificationVisible, (newValue) => {
 <template>
     <div
         v-show="isNotificationVisible"
-        class="flex flex-row items-center rounded-lg gap-4 fixed top-8 right-8 bg-green-50 border-gray-300 border px-6 py-4"
+        class="flex flex-row items-center rounded-lg gap-4 fixed top-8 right-8 bg-green-50 border-gray-300 border px-6 py-4 z-10"
     >
         <FontAwesomeIcon class="text-4xl text-green-700" :icon="faCircleCheck" />
         <div>
