@@ -7,7 +7,7 @@ export const navBarLinks = [
 ];
 export const footerLinks = [
   {name: 'Home', path: '/'},
-  {name: 'Shop', path: '/shop'},
+  {name: 'Shop', path: '/products'},
   {name: 'About', path: '/about'},
   {name: 'Contact', path: '/contact'},
 ];

@@ -1,6 +1,6 @@
 <script setup>
-import { ref, onMounted } from 'vue';
-import { RouterLink } from 'vue-router';
+import { ref, onMounted, watch } from 'vue';
+import { RouterLink, useRoute } from 'vue-router';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faUser, faShoppingCart, faBars, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { navBarLinks } from '../mocks/navigation';
@@ -25,6 +25,15 @@ onMounted(() => {
   const cartStored = localStorage.getItem('cart');
   if (cartStored) cartStore.cart = JSON.parse(cartStored);
 })
+
+const route = useRoute();
+watch(
+  () => route.fullPath,
+  () => {
+    if(isCategoriesDropdownVisible.value) onShowCategories();
+    if(isDropdownMenuVisible.value) onShowDropdownMenu();
+  }
+)
 
 </script>
 
@@ -113,7 +122,7 @@ onMounted(() => {
         >
           <div class="py-1" role="none">
             <RouterLink
-              to="#"
+              to="/products"
               class="block px-4 py-2 text-sm transition-colors text-gray-600 hover:bg-sky-100 hover:text-sky-500"
               role="menuitem"
               tabindex="-1"
@@ -122,7 +131,7 @@ onMounted(() => {
               Category 1
             </RouterLink>
             <RouterLink
-              to="#"
+              to="/products"
               class="block px-4 py-2 text-sm transition-colors text-gray-600 hover:bg-sky-100 hover:text-sky-500"
               role="menuitem"
               tabindex="-1"
@@ -131,7 +140,7 @@ onMounted(() => {
               Category 2
             </RouterLink>
             <RouterLink
-              to="#"
+              to="/products"
               class="block px-4 py-2 text-sm transition-colors text-gray-600 hover:bg-sky-100 hover:text-sky-500"
               role="menuitem"
               tabindex="-1"
